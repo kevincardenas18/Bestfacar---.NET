@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PruebaBFC-Web.config Connection String" description="PruebaBFC Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="Data Source=ASUS-ROG-SCAR-I;initial catalog=PruebaBFC;integrated security=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jordy\\source\\repos\\PruebaBestfacar\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PruebaBFC']/@connectionString" />
+  </parameter>
+</parameters>

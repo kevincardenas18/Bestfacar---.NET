@@ -1,0 +1,58 @@
+﻿@model PruebaBestfacar.Models.Frenos
+
+@{
+    ViewBag.Tittle = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Frenos</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Vehiculo.Marca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Vehiculo.Marca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FrenosDelanteros)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FrenosDelanteros)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FrenosTraseros)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FrenosTraseros)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FrenosEstacionamiento)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FrenosEstacionamiento)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.FrenosID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

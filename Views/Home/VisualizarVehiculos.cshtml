@@ -1,0 +1,72 @@
+﻿@model IEnumerable<PruebaBestfacar.Models.Vehiculo>
+@{
+    ViewBag.Title = "Visualizar Vehiculos";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .item {
+            width: calc(33.33% - 20px);
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+            .item img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+            }
+
+            .item p {
+                margin-bottom: 5px;
+            }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .btn:hover {
+                background-color: darkorange;
+            }
+    </style>
+</head>
+<body>
+    <h2>Visualizar Vehículo</h2>
+
+    <div class="container">
+        @foreach (var item1 in Model)
+        {
+            <div class="item" id="item1">
+                <br />
+                <img src="@Url.Action("convertirImagen", "Vehiculoes", new {VehiculoID = item1.VehiculoID})" alt="Imagen de vehículo" />
+                <br />
+                <p>@Html.DisplayFor(modelItem => item1.Marca)</p>
+                <p>@Html.DisplayFor(modelItem => item1.Modelo)</p>
+                <p>@Html.DisplayFor(modelItem => item1.Version)</p>
+                <p>@Html.DisplayFor(modelItem => item1.Anio)</p>
+                <p>@Html.DisplayFor(modelItem => item1.Categoria)</p>
+                <a href="@Url.Action("Index", "Home/VisualizarVehiculos")" class="btn">Visualizar Vehículo</a>
+            </div>
+        }
+    </div>
+    <br>
+    <br>
+</body>
+</html>
+
+

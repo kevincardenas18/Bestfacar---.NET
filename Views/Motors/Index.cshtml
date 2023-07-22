@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PruebaBestfacar.Models.Motor>
+
+@{
+    ViewBag.Tittle = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cilindraje)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Potencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Torque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustible)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehiculo.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cilindraje)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Potencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Torque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Combustible)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.MotorID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.MotorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.MotorID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Pagina Inicio";
+}
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        @{ int ol = 0;}
+        @foreach (var item in Model)
+        {
+            var olDinamico = ol++ == 0 ? "active" : "";
+            <li data-target="#carouselExampleIndicators" data-slide-to="@ol" class="@olDinamico"></li>
+        }
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        @{ int cont = 0;}
+        @foreach (var item in Model)
+        {
+            var itemDinamico = cont++ == 0 ? "item active" : "item";
+            <div class="@itemDinamico">
+                <a href="@(item.Url)" target="_blank"><img src="@Url.Content(item.ImagePath)" alt="@(item.Nombre)"></a>
+                <div class="carousel-caption">
+                    @(item.Nombre)
+                </div>
+            </div>
+        }
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+    <div class="col-md-4">
+        <center>
+            <h2>Chery Tiggo 7pro</h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/7 pro.jpg" /></br>
+            </br><p align="justify"> El All New Tiggo 7 Pro es un vehículo sofisticado que presenta un excelente sistema de seguridad, desempeño formidable,amplio espacio interior y tecnología avanzada.</p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+        </br></br></br><center>
+            <h2>Chevrolet Tahoe </h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/Chevrolet Tahoe 2022 Ecuador fayals 3.png" /></br>
+            </br><p align="justify">Chevrolet Tahoe sigue encontrando nuevas formas de dar prioridad a la comodidad y conveniencia para que a bordo todos puedan disfrutar y configurar cada espacio según sus necesidades.Chevrolet Tahoe cuenta con tracción 4WD con caja de transferencia con 4 módulos de conducción por lo cual optimiza la tracción en base a las necesidades del conductor </p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+    </div>
+
+    <div class="col-md-4">
+        <center>
+            <h2>Ford F-150 RAPTOR</h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/RAPTOR.jpg" /></br>
+            </br><p align="justify">La F-150 Raptor sigue siendo la pick-up más potente. No sólo eso: se mantiene en el trono de los mejores y más divertidos vehículos (de cualquier tipo) que se puedan comprar en tu país. Si nunca manejaste una y podés pagarla: es el Ford que no puede faltar en tu garage.</p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+        </br><center>
+            <h2>Hyundai Sonata </h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/2021_hyundai_sonata_sedan_limited-4.jpg" /></br>
+            </br><p align="justify">El nuevo Sonata está ganando corazones y mentes con sus innovadoras tecnologías que realmente se preocupan por tu bienestar. Su avanzada tecnología de asistencia al conductor funciona de forma invisible detrás de escena para liberarte de las preocupaciones y el estrés de conducir y convertirte en un conductor más inteligente, mejor y más seguro.</p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+    </div>
+
+    <div class="col-md-4">
+        <center>
+            <h2>Kia Stinger</h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/Stinger2022.jpg" /></br>
+            </br><p align="justify">El Stinger pone tu vida en movimiento de innumerables nuevas formas . Su diseño fastback de cinco puertas con 406 litros de capacidad de carga significa que hay mucho espacio de fácil acceso para llevar todo lo que necesita, incluso para un largo viaje por carretera.</p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+        </br></br><center>
+            <h2>Lamborghini Aventador</h2><br>
+            <img width="350" height="300" src="~/Content/imgVehiculos/aventador2.jpg" /></br>
+            </br><p align="justify">Lamborghini sabe perfectamente cómo afrontar los desafíos y por eso ha creado el Aventador SVJ. Para fusionar una tecnología de vanguardia con un diseño excepcional, sin transigir en nada. En un futuro gobernado por la tecnología se están perdiendo las emociones reales, pero en el futuro que estamos diseñando están siempre en primer plano, porque siempre es el ser humano quien conduce. </p>
+            <p><a class="btn btn-default" href="">Detalles &raquo;</a></p>
+        </center>
+
+    </div>
+
+    
+
+
+</div>

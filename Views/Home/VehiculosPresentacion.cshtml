@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Comparar Vehiculos";
+}
+
+<style>
+    .comparativa-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        text-align: center;
+        margin: auto;
+    }
+
+        .comparativa-table th,
+        .comparativa-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .comparativa-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+    .vehiculo-imagen {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .btn-black {
+        color: #fff;
+        background-color: #000;
+        border-color: #000;
+    }
+
+        .btn-black:hover {
+            color: #fff;
+            background-color: #333;
+            border-color: #333;
+        }
+
+    .mensaje-advertencia {
+        color: #ff0000;
+        font-weight: bold;
+    }
+</style>
+
+
+<h2>Comparativa de Vehiculos</h2>
+
+<form method="POST" action="CompararVehiculos">
+    @if (Model != null)
+    {
+        <label for="vehiculo1">Vehículo 1:</label>
+        <select name="vehiculo1" id="vehiculo1">
+            @foreach (var item in Model)
+            {
+                <option value="@item.VehiculoID">@item.Marca @item.Modelo</option>
+            }
+        </select>
+
+        <label for="vehiculo2">Vehículo 2:</label>
+        <select name="vehiculo2" id="vehiculo2">
+            @foreach (var item in Model)
+            {
+                <option value="@item.VehiculoID">@item.Marca @item.Modelo</option>
+            }
+        </select>
+
+        <button type="submit">Comparar</button>
+    }
+    else
+    {
+        <br />
+        <br />
+        <p>Vehículos Listos para comparar.</p>
+    }
+
+    <div>
+        @Html.ActionLink("Nueva Comparativa", "VehiculosPresentacion", null, new { @class = "btn btn-black" })
+    </div>
+    <br />
+
+</form>
+
+@if (ViewBag.Comparativa != null)
+{
+    <table class="comparativa-table">
+        <tr>
+            <th>Campo</th>
+            <th>Vehículo 1</th>
+            <th>Vehículo 2</th>
+        </tr>
+        @foreach (var campo in ViewBag.Comparativa)
+        {
+            <tr>
+                <td>@campo.Nombre</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(campo.ImagenUrlVehiculo1))
+                    {
+                        <img src="@campo.ImagenUrlVehiculo1" alt="Imagen Vehículo 1" class="vehiculo-imagen" />
+                    }
+                </td>
+                <td>@campo.ValorVehiculo1</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(campo.ImagenUrlVehiculo2))
+                    {
+                        <img src="@campo.ImagenUrlVehiculo2" alt="Imagen Vehículo 2" class="vehiculo-imagen" />
+                    }
+                </td>
+                <td>@campo.ValorVehiculo2</td>
+            </tr>
+        }
+    </table>
+}
+
+<br />
+<br />
+
+@if (!string.IsNullOrEmpty(ViewBag.MensajeMayorSeguridad))
+{
+    <p class="mensaje-advertencia">@ViewBag.MensajeMayorSeguridad</p>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.MensajeEquipamiento))
+{
+    <p class="mensaje-advertencia">@ViewBag.MensajeEquipamiento</p>
+}
+
+
+
+
+
+
+

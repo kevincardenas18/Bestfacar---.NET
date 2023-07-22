@@ -1,0 +1,64 @@
+﻿@model PruebaBestfacar.Models.Carrosel
+
+@{
+    ViewBag.Title = "Detalle Archivo Carrosel";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <style>
+        .btn-orange {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h4>Detalle del Archivo @Html.DisplayFor(model => model.Nombre)</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ImagePath)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Url)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Url)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Regresar", "Index", new { id = Model.carroselID }, new { @class = "btn-orange" }) |
+        @Html.ActionLink("Editar", "Edit", null, new { @class = "btn-orange" })
+    </p>
+</body>
+</html>

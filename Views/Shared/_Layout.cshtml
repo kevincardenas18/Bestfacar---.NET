@@ -1,0 +1,143 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BESTFACAR</title>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            background-color: black;
+            border: none;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .navbar-brand {
+            padding: 10px;
+        }
+
+            .navbar-brand img {
+                height: 50px;
+            }
+
+        .navbar-toggle {
+            border-color: #fff;
+        }
+
+            .navbar-toggle .icon-bar {
+                background-color: #fff;
+            }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #ccc;
+            }
+
+        .navbar-nav .dropdown-menu {
+            background-color: #343a40;
+        }
+
+            .navbar-nav .dropdown-menu a {
+                color: #fff;
+            }
+
+                .navbar-nav .dropdown-menu a:hover {
+                    color: #ccc;
+                }
+
+        .navbar-form .form-control {
+            border-radius: 20px;
+        }
+
+        .navbar-form .btn {
+            border-radius: 20px;
+        }
+
+        footer {
+            background-color: black;
+            padding: 20px 0;
+            color: #fff;
+        }
+
+            footer img {
+                height: 50px;
+            }
+
+            footer p {
+                margin-bottom: 0;
+            }
+
+        .container.body-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="dropdown" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img width="200" height="50" src="~/Content/logo/logoblanco.png" />
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-dark">
+                    <li> @Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li> @Html.ActionLink("Visualizar Vehiculos", "Index", "Home/VisualizarVehiculos")</li>
+                    <li> @Html.ActionLink("Comparar Vehiculos", "Index", "Home/VehiculosPresentacion")</li>
+                    <li> @Html.ActionLink("Reporte", "Index", "Home/Reporte")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Administrador <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Agregar Imagen Carrosel", "Index", "Carrosel")</li>
+                            <li>@Html.ActionLink("Registrar Nuevo Vehiculo", "Index", "Vehiculoes")</li>
+                            <li>@Html.ActionLink("Registrar Nuevo Usuario", "Index", "Usuarios")</li>
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li> @Html.ActionLink("Cerrar Sesion", "CerrarSesion", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <br>
+    <br>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <center>
+                <br><img width="200" height="50" src="~/Content/logo/logoblanco2.png" />
+                <br><p>&copy; @DateTime.Now.Year - Mi aplicación BestFaCar</p>
+            </center>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</body>
+</html>

@@ -1,0 +1,159 @@
+﻿@model IEnumerable<PruebaBestfacar.Models.Carrosel>
+
+@{
+    ViewBag.Title = "Imagenes Carrosel";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color:black
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100px;
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+            .action-links a:hover {
+                color: #666;
+            }
+
+        .btn-create-new {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+            .btn-create-new:hover {
+                background-color: whitesmoke;
+            }
+
+        .btn-edit {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: green;
+            color: black;
+            text-decoration: white;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+
+        .btn-details {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: dodgerblue;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-delete {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: indianred;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>@ViewBag.Title</h1>
+    <br />
+
+    <p>
+        @Html.ActionLink("Agregar", "Create", null, new { @class = "btn-create-new" })
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                Imagen Actual
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Content(item.ImagePath)" alt="@(item.Nombre)">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImagePath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Url)
+                </td>
+                <td class="action-links">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.carroselID }, new { @class = "btn-edit" }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.carroselID }, new { @class = "btn-details" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.carroselID }, new { @class = "btn-delete" })
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
+

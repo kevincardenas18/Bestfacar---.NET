@@ -1,0 +1,98 @@
+﻿@model PruebaBestfacar.Models.Capacidades
+
+@{
+    ViewBag.Tittle = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Capacidades</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Vehiculo.Marca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Vehiculo.Marca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroPuertas)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroPuertas)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroPasajeros)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NumeroPasajeros)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Longitud)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Longitud)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Ancho)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Ancho)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Alto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Alto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DistanciaEjes)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DistanciaEjes)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.AlturaSuelo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AlturaSuelo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VolumenMaletero)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VolumenMaletero)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CapacidadesID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

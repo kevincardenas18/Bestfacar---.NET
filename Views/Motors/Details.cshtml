@@ -1,0 +1,66 @@
+﻿@model PruebaBestfacar.Models.Motor
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Motor</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Vehiculo.Marca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Vehiculo.Marca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cilindraje)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cilindraje)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Potencia)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Potencia)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Torque)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Torque)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Combustible)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Combustible)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MotorID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

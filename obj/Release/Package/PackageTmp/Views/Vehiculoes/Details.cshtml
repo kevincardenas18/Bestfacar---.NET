@@ -1,0 +1,82 @@
+﻿@model PruebaBestfacar.Models.Vehiculo
+
+@{
+    ViewBag.Tittle = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Vehiculo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Marca)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Marca)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Modelo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Version)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Version)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Anio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Anio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Categoria)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NombreImagen)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NombreImagen)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </dt>
+    
+            <dd>
+                <img width="120" height="120" src="@Url.Action("convertirImagen", "Vehiculoes", new {VehiculoID = Model.VehiculoID})" /> 
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.VehiculoID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

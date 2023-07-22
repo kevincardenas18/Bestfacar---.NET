@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BESTFACAR</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="dropdown" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img width="200" height="50" src="~/Content/logo/logoblanco.png" />
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-dark">
+                    <li> @Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li> @Html.ActionLink("Visualizar Vehiculos", "Index", "Home/VehiculosPresentacion")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Administrador <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Agregar Imagen Carrosel", "Index", "Carrosel")</li>
+                            <li>@Html.ActionLink("Rigistrar Nuevo Vehiculo", "Index", "Vehiculoes")</li>
+                            <li>@Html.ActionLink("Agregar Nuevo Usuario", "Index", "Usuarios")</li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Buscar">
+                    </div>
+                    <button type="submit" class="btn btn-default">Buscar</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li> @Html.ActionLink("Cerrar Sesion", "CerrarSesion", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <center>
+                </br><img width="200" height="50" src="~/Content/logo/logoblanco2.png" />
+                </br><p>&copy; @DateTime.Now.Year - Mi aplicación BestFaCar</p>
+            </center>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

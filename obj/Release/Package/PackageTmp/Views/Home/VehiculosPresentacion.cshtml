@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PruebaBestfacar.Models.Vehiculo>
+@{
+    ViewBag.Title = "Visualizar Vehiculos";
+ 
+}
+
+<h2>VehiculosPresentacion</h2>
+
+<ul class="thumbs">
+    @foreach (var item1 in Model)
+    {
+        
+            <div class="container">
+                <div class="item" id="item1">
+                    <br /><img width="150" height="150" src="@Url.Action("convertirImagen", "Vehiculoes", new {VehiculoID = item1.VehiculoID})" /><br />
+                    @Html.DisplayFor(modelItem => item1.Marca) <br />
+                    @Html.DisplayFor(modelItem => item1.Modelo) <br />
+                    @Html.DisplayFor(modelItem => item1.Version) <br />
+                    @Html.DisplayFor(modelItem => item1.Anio) <br />
+                    @Html.DisplayFor(modelItem => item1.Categoria) <br />
+                    <button class="btn btn-success"><li>@Html.ActionLink("Visualizar Vehiculo", "Index", "Home/VisualizarVehiculos") </li>Visualizar Vehiculo</button>
+                </div>
+             </div>
+        
+     }
+
+    </ul>
+

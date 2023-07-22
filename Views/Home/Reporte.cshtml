@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Reporte de Vehículos";
+}
+
+<h2>Reporte de Vehículos</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.CategoriaMayorPromedio))
+{
+    <h3>Categoría con Mayor Promedio: @ViewBag.CategoriaMayorPromedio</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehiculo in ViewBag.Vehiculos ?? new List<dynamic>())
+            {
+                <tr>
+                    <td>@vehiculo.Categoria</td>
+                    <td>@vehiculo.Marca</td>
+                    <td>@vehiculo.Modelo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>No hay vehículos registrados</h3>
+}
+
+@Html.ActionLink("Volver", "Index", "Home", null, new { @class = "btn btn-primary" })
